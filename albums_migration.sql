@@ -1,7 +1,7 @@
 USE hippo_staci;
 
 
-DROP TABLE IF EXISTS album;
+DROP TABLE IF EXISTS albums;
 
 CREATE TABLE `albums` (
                           `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
