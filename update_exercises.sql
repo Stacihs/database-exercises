@@ -2,7 +2,7 @@ USE hippo_staci;
 
 select name from albums;
 update albums
-set sales = sales * 10
+set sales = sales * 10;
 select name, sales from albums;
 
 select name, release_date from albums where release_date < 1980;
