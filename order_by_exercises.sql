@@ -52,4 +52,4 @@ select emp_no, first_name, last_name from employees
 where last_name like ('e%') or last_name like ('%e') order by emp_no desc;
 
 select emp_no, first_name, last_name from employees
-where last_name like ('e%') and last_name like ('%e') order by emp_no desc ;
+where last_name like ('e%') and last_name like ('%e') order by emp_no desc;
