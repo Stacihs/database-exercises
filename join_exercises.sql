@@ -18,18 +18,21 @@ JOIN departments as d
 ON d.dept_no = de.dept_no
 WHERE de.to_date = '9999-01-01' AND e.gender = 'F';
 
-# SELECT title, COUNT(title) as 'TOTAL'
-# FROM employees
-# JOIN titles
-# ON titles.emp_no = employees.emp_no
-# JOIN dept_emp
-# ON dept_emp.emp_no = employees.emp_no
-# JOIN departments
-# ON departments.dept_no = dept_emp.dept_no
-# WHERE departments.dept_name = 'Customer Service' and dept_emp.to_date = '9999-01-01';
+# CURRENT TITLES OF EMPLOYEES IN CUSTOMER SERVICE
+SELECT DISTINCT titles.title AS 'Title', COUNT(Title) AS 'Total'
+FROM employees
+JOIN titles
+ON titles.emp_no = employees.emp_no
+JOIN dept_emp
+ON dept_emp.emp_no = employees.emp_no
+JOIN departments
+ON departments.dept_no = dept_emp.dept_no
+WHERE departments.dept_name = 'Customer Service' and dept_emp.to_date = '9999-01-01'
+GROUP BY Title
+ORDER BY Total DESC;
 
 
-
+# CURRENT SALARY OF CURRENT MANAGERS
 SELECT departments.dept_name AS 'Department Name', CONCAT(e.first_name, ' ', e.last_name) AS 'Department Manager', salary AS Salary
 FROM employees as e
          JOIN dept_manager
